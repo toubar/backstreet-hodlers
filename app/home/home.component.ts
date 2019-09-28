@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 
 @Component({
     selector: "Home",
@@ -12,5 +12,11 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
+    }
+
+    textFieldValue: string = "";
+
+    onButtonTap(): void {
+        console.log("Button was pressed");
     }
 }
