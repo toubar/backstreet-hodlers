@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import * as appSettings from "tns-core-modules/application-settings";
 import {Constant} from "~/constant";
+import {OasisConnection} from "~/backend_oasis/oasis-connection"
 import {RouterExtensions} from "nativescript-angular";
 
 @Component({
@@ -11,6 +12,7 @@ import {RouterExtensions} from "nativescript-angular";
 })
 export class HomeComponent implements OnInit {
     private walletText;
+    private oasisConnexion;
 
     constructor(private routerExtensions: RouterExtensions) {
 
@@ -22,6 +24,11 @@ export class HomeComponent implements OnInit {
     setWallet() {
         appSettings.setString(Constant.WALLET_KEY, this.walletText);
         console.log("LOG: Wallet key has been saved: " + (this.walletText));
+        this.oasisConnexion = new OasisConnection();
+        let test = this.oasisConnexion.connectToOasis();
+        console.log(test);
+
+
         this.routerExtensions.navigate(["/deliveryHome"], { clearHistory: true });
     }
 }
