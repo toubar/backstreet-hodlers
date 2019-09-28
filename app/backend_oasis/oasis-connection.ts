@@ -1,6 +1,5 @@
 import oasis from '@oasislabs/client';
 import { delivery } from "./delivery";
-import * as testijng from "ws";
 
 export class OasisConnection {
     state;
@@ -9,7 +8,7 @@ export class OasisConnection {
         this.state = new delivery();
     }
 
-    public async connectToOasis() {
+    public connectToOasis() {
         console.log("LOG: creating oasis connection");
         const headers = new Map();
         headers.set('X-OASIS-LOGIN-TOKEN', this.state.token);
