@@ -1,10 +1,9 @@
 <GridLayout>
 	<ScrollView class="page">
 		<StackLayout class="home-panel">
-			<!--Add your page content here-->
 			<Image id="home-logo-img" src="~/assets/images/naruto-runner-cropped-bw.png"></Image>
-			<TextField id="home-wallet-input" [(ngModel)]="textFieldValue" hint="Enter your wallet"></TextField>
-			<Button id="home-next-btn" text="Next" (tap)="onButtonTap()"></Button>
+			<TextField id="home-wallet-input" [(ngModel)]="walletText" hint="Enter your wallet"></TextField>
+			<Button id="home-next-btn" text="Next" (tap)="setWallet()"></Button>
 		</StackLayout>
 	</ScrollView>
 </GridLayout>

@@ -1,4 +1,6 @@
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import * as appSettings from "tns-core-modules/application-settings";
+import {Constant} from "~/constant";
 
 @Component({
     selector: "Home",
@@ -7,16 +9,13 @@ import {Component, OnInit} from "@angular/core";
     styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
-
-    constructor() {
-    }
+    private walletText;
 
     ngOnInit(): void {
     }
 
-    textFieldValue: string = "";
-
-    onButtonTap(): void {
-        console.log("Button was pressed");
+    setWallet() {
+        appSettings.setString(Constant.WALLET_KEY, this.walletText);
+        console.log("LOG: Wallet key has been saved: " + (this.walletText));
     }
 }
