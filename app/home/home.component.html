@@ -10,7 +10,8 @@
 			 class="h2 description-label"></Label>
 			<Label textWrap="true" text="Scan the QR code with your mobile device and watch the changes sync live while you play with the code."
 			 class="h2 description-label"></Label>
-			<Button text="on/off" (tap)="onTapChangeValue($event)"></Button>
+			<TextView [(ngModel)]="walletText" hint="Enter some text" [editable]="true"
+					  class="input input-border"></TextView>
 			<Button text="Tap me!" (tap)="onTap($event)"></Button>
 		</StackLayout>
 	</ScrollView>
