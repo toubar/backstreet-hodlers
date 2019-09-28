@@ -1,0 +1,17 @@
+.form-new-delivery-address {
+    vertical-align: bottom;
+    margin-bottom: 250em;
+    width: 90%;
+}
+
+TextField {
+    margin: 5em;
+}
+
+#btn-finish-delivery-input {
+    vertical-align: bottom;
+    margin-bottom: 100em;
+    width: 80%;
+    text-transform: capitalize;
+}
+
