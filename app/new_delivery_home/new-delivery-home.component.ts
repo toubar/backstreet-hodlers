@@ -1,4 +1,5 @@
 import { Component} from "@angular/core";
+import {RouterExtensions} from "nativescript-angular";
 
 @Component({
     selector: "new-delivery-home",
@@ -8,5 +9,11 @@ import { Component} from "@angular/core";
 })
 export class NewDeliveryHomeComponent {
 
+    constructor(private routerExtensions: RouterExtensions) {
 
+    }
+
+    onNewDeliveryButtonTap() {
+        this.routerExtensions.navigate(["/new-delivery-form"]);
+    }
 }

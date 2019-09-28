@@ -22,6 +22,6 @@ export class HomeComponent implements OnInit {
     setWallet() {
         appSettings.setString(Constant.WALLET_KEY, this.walletText);
         console.log("LOG: Wallet key has been saved: " + (this.walletText));
-        this.routerExtensions.navigate(["/deliveryHome"], { clearHistory: true });
+        this.routerExtensions.navigate(["/deliveryHome"]);
     }
 }
