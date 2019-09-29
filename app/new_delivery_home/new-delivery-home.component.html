@@ -6,7 +6,7 @@
         <Label text="To" class="list-delivery-to" style="flex:3;"></Label>
         <Label text="Status" class="list-delivery-status" style="align-content: flex-end;margin-right: 10em"></Label>
     </FlexboxLayout>
-    <ListView order="3" class="list-group" [items]="dummyDeliveries" style="height:1000px">
+    <ListView order="3" class="list-group" [items]="dummyDeliveries" (itemTap)="onItemTap($event)" style="height:1000px">
         <ng-template let-delivery="item">
             <FlexboxLayout flexDirection="row" class="list-group-item table">
                     <Label [text]="delivery.tokens" class="list-delivery-tokens"></Label>
@@ -18,3 +18,4 @@
     </ListView>
     <Button order="4" class="btn-new-delivery" text="New delivery" (tap)="onNewDeliveryButtonTap()"></Button>
 </FlexboxLayout>
+

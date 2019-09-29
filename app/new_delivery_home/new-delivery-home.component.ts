@@ -3,6 +3,7 @@ import {AfterViewInit, Component} from "@angular/core";
 import {RouterExtensions} from "nativescript-angular";
 import axios from "axios";
 import {IDelivery} from "~/types"
+import * as dialogs from "tns-core-modules/ui/dialogs";
 
 @Component({
     selector: "new-delivery-home",
@@ -13,6 +14,7 @@ import {IDelivery} from "~/types"
 
 export class NewDeliveryHomeComponent implements AfterViewInit {
 
+    // TODO enable API call and disable dummy data
     // deliveries: Array<IDelivery> = [];
 
     constructor(private routerExtensions: RouterExtensions) {
@@ -21,6 +23,7 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
 
     ngAfterViewInit() {
         console.log("LOG: NewDeliveryHomeComponent just rendered")
+        // TODO enable API call and disable dummy data
         // axios.get("localhost:8080/")
         //     .then((res) => {
         //         // this.deliveries = res.data;
@@ -43,7 +46,7 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
             deliverer: "alex",
             from: "Prague 1",
             to: "Prague 2",
-            description: "",
+            description: "I would like to deliver documents to my lawyer",
             tokens: 5,
         },
         {
@@ -53,7 +56,7 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
             deliverer: "toubar",
             from: "Prague 1",
             to: "Prague 3",
-            description: "",
+            description: "I would like to deliver an item tomorrow",
             tokens: 6,
         },
         {
@@ -63,7 +66,7 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
             deliverer: "toubar",
             from: "Prague 1",
             to: "Prague 3",
-            description: "",
+            description: "I would like to deliver a TV at next week",
             tokens: 2,
         },
         {
@@ -73,7 +76,7 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
             deliverer: "toubar",
             from: "Prague 1",
             to: "Prague 4",
-            description: "",
+            description: "I would like to deliver an item from my friend in Prague 1",
             tokens: 3,
         },
         {
@@ -83,7 +86,7 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
             deliverer: "toubar",
             from: "Prague 5",
             to: "Prague 6",
-            description: "",
+            description: "I would like to deliver something in the evening",
             tokens: 6
         },
         {
@@ -93,7 +96,7 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
             deliverer: "toubar",
             from: "Prague 1",
             to: "Prague 7",
-            description: "",
+            description: "I would like to deliver my notes to my friend in Prague 7",
             tokens: 9,
         },
         {
@@ -103,7 +106,7 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
             deliverer: "toubar",
             from: "Prague 3",
             to: "Prague 7",
-            description: "",
+            description: "I would like to deliver a bag to my mom",
             tokens: 5,
         },
         {
@@ -113,7 +116,7 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
             deliverer: "toubar",
             from: "Prague 4",
             to: "Prague 1",
-            description: "",
+            description: "I would like to deliver my notes to my friend in Prague 7",
             tokens: 3,
         },
         {
@@ -123,7 +126,7 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
             deliverer: "toubar",
             from: "Prague 8",
             to: "Prague 2",
-            description: "",
+            description: "I would like to deliver an item from my friend in Prague 1",
             tokens: 8,
         },
         {
@@ -133,7 +136,7 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
             deliverer: "toubar",
             from: "Prague 1",
             to: "Prague 1",
-            description: "",
+            description: "I would like to deliver documents to my lawyer",
             tokens: 3,
         },
         // {
@@ -179,8 +182,15 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
     ];
 
     onItemTap(args: ItemEventData): void {
-        console.log("item tapped");
+        dialogs.confirm({
+            // TODO - change dummy data to real API call
+            title: "Delivery details",
+            message: this.dummyDeliveries[args.index].description,
+            okButtonText: "Take delivery",
+            cancelButtonText: "Cancel",
+        }).then(function (result) {
+            // TODO - api call with result to take delivery
+            console.log(result);
+        });
     }
-
-    isBusy: boolean = true;
 }

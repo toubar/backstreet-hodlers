@@ -2,7 +2,7 @@
     /*vertical-align: top; only for dev purposes*/
     vertical-align: bottom;
     horizontal-align: center;
-    margin-bottom: 50em;
+    margin: 10em;
     text-transform: none;
     width: 60%;
 }
@@ -35,23 +35,19 @@
 
 .list-delivery-tokens {
     order: 1;
-    /*flex:1;*/
 }
 
 .list-delivery-from {
     order: 2;
-    /*flex:2;*/
 }
 
 .list-delivery-to {
     order: 3;
-    /*flex:2;*/
 }
 
 .list-delivery-status {
     order: 4;
     align-content: flex-end;
-    /*flex:2;*/
 }
 
 
