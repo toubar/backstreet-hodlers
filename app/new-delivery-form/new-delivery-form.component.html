@@ -1,8 +1,17 @@
 <StackLayout class="form-new-delivery-address" orientation="vertical">
-    <TextField hint="Address pickup"></TextField>
-    <TextField hint="Delivery address"></TextField>
-    <TextField hint="Description"></TextField>
-    <TextField hint="Tokens offered"></TextField>
+    <TextField hint="Address pickup" [(ngModel)]="from"></TextField>
+    <TextField hint="Delivery address" [(ngModel)]="to"></TextField>
+    <TextField hint="Description" [(ngModel)]="description"></TextField>
+    <TextField hint="Tokens offered" [(ngModel)]="tokens"></TextField>
 </StackLayout>
-<Button id="btn-finish-delivery-input" text="Finish" (tap)="onButtonTap()"></Button>
 
+<!--<StackLayout class="form-new-delivery-address" orientation="vertical">-->
+<!--    <RadDataForm [source]="newDelivery">-->
+<!--        <TKEntityProperty tkDataFormProperty name="from" displayName="Address pickup" index="0"></TKEntityProperty>-->
+<!--        <TKEntityProperty tkDataFormProperty name="to" displayName="Delivery address" index="1"></TKEntityProperty>-->
+<!--        <TKEntityProperty tkDataFormProperty name="description" displayName="Description" index="2"></TKEntityProperty>-->
+<!--        <TKEntityProperty tkDataFormProperty name="tokens" displayName="Tokens offered" index="3"></TKEntityProperty>-->
+<!--    </RadDataForm>-->
+<!--</StackLayout>-->
+
+<Button id="btn-finish-delivery-input" text="Finish" (tap)="onButtonTap()"></Button>

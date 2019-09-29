@@ -4,8 +4,9 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NewDeliveryHomeComponent } from "./new_delivery_home/new-delivery-home.component";
-import {NewDeliveryFormComponent} from "~/new-delivery-form/new-delivery-form.component";
 import {NativeScriptUIDataFormModule} from "nativescript-ui-dataform/angular";
+import {NativeScriptFormsModule} from "nativescript-angular";
+import {NewDeliveryFormComponent} from "~/new-delivery-form/new-delivery-form.component";
 
 @NgModule({
     bootstrap: [
@@ -14,7 +15,8 @@ import {NativeScriptUIDataFormModule} from "nativescript-ui-dataform/angular";
     imports: [
         NativeScriptModule,
         AppRoutingModule,
-        NativeScriptUIDataFormModule
+        NativeScriptUIDataFormModule,
+        NativeScriptFormsModule
     ],
     declarations: [
         AppComponent,

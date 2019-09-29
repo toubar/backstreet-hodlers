@@ -1,7 +1,53 @@
 .btn-new-delivery {
+    /*vertical-align: top; only for dev purposes*/
     vertical-align: bottom;
     horizontal-align: center;
-    margin-bottom: 100em;
+    margin: 10em;
     text-transform: none;
-    width: 70%;
+    width: 60%;
 }
+
+.page-layout {
+    padding: 20em;
+    margin: 10em;
+}
+
+.list-group-item {
+    justify-content: space-between;
+}
+
+.open-deliveries-table-header {
+    justify-content: space-between;
+    font-weight: 500;
+    font-family: "Arial Rounded MT Bold";
+}
+
+
+.lbl-your-deliveries {
+    margin: 30em;
+    font-size: 30em;
+    vertical-align: top;
+    text-align: center;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: "Roboto Regular";
+}
+
+.list-delivery-tokens {
+    order: 1;
+}
+
+.list-delivery-from {
+    order: 2;
+}
+
+.list-delivery-to {
+    order: 3;
+}
+
+.list-delivery-status {
+    order: 4;
+    align-content: flex-end;
+}
+
+

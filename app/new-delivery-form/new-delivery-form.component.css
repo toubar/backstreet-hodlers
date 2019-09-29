@@ -1,6 +1,7 @@
 .form-new-delivery-address {
-    vertical-align: bottom;
-    margin-bottom: 250em;
+    /*vertical-align: top; only for dev purposes*/
+    vertical-align: top;
+    margin-top: 100em;
     width: 90%;
 }
 
@@ -9,8 +10,9 @@ TextField {
 }
 
 #btn-finish-delivery-input {
-    vertical-align: bottom;
-    margin-bottom: 100em;
+    /*vertical-align: top; only for dev purposes*/
+    vertical-align: top;
+    margin-top: 10em;
     width: 80%;
     text-transform: capitalize;
 }
