@@ -1,8 +1,8 @@
 export interface IDelivery {
-    status: deliveryStatus
-    id: string
-    initiator: string
-    deliverer: string
+    status?: deliveryStatus
+    id?: string
+    initiator?: string
+    deliverer?: string
     from: string
     to: string
     description: string

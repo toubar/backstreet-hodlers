@@ -10,7 +10,7 @@ import {RouterExtensions} from "nativescript-angular";
     styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
-    private walletText;
+    private walletText: string;
 
     constructor(private routerExtensions: RouterExtensions) {
 
