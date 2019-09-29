@@ -8,7 +8,7 @@ const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "home", loadChildren: "./home/home.module#HomeModule" },
     { path: "deliveryHome", component: NewDeliveryHomeComponent },
-    { path: "new-delivery-form", component: NewDeliveryFormComponent },
+    { path: "new-delivery-form", component: NewDeliveryFormComponent},
 ];
 
 @NgModule({

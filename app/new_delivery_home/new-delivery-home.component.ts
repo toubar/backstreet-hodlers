@@ -26,41 +26,38 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
     ngAfterViewInit() {
         console.log("LOG: NewDeliveryHomeComponent just re-rendered");
         // TODO enable GET list of deliveries HTTP call and disable dummy data
-        // this.deliveries = this.getDeliveries();
-        getString(`http://192.168.51.66:8080/`).then((r: string) => {
-            console.log(r);
-            console.log("new get from NativeScript");
-        });
+        this.deliveries = this.getDeliveries();
+        // getString(`http://192.168.51.66:8080/`).then((r: string) => {
+        //     console.log(r);
+        //     console.log("new get from NativeScript");
+        // });
+        // axios.get(`http://192.168.51.66:8080/`)
+        //     .then((r) => {
+        //         console.log(r);
+        //     });
     };
 
-    // getDeliveries = (): IDelivery[] => {
-    //     console.log("LOG: getting list of deliveries....");
-    //     const url: string = `http://192.168.51.66:8080/deliveries/open?privateKey=${appSettings.getString(Constant.WALLET_KEY)}`;
-    //     console.log(url);
-    //     let listOfDeliveries: IDelivery[] = [];
-    //     axios.get(url)
-    //         .then((res) => {
-    //             console.log("got the list of deliveries!");
-    //             console.log(res);
-    //             listOfDeliveries = res.data;
-    //         })
-    //         .catch((err) => {
-    //             console.log("FAILED!");
-    //             console.log(err.toString());
-    //             listOfDeliveries = [];
-    //         });
-    //     return listOfDeliveries;
-    // };
-
-    // getDeliveries = (): void => {
-    //     getString(`http://192.168.51.66:8080/`).then((r: string) => {
-    //         console.log(r);
-    //         console.log("new get");
-    //     });
-    // };
+    getDeliveries = (): IDelivery[] => {
+        console.log("LOG: getting list of deliveries....");
+        const url: string = `https://backstreet-hodlers.herokuapp.com/deliveries/open?privateKey=${appSettings.getString(Constant.WALLET_KEY)}`;
+        console.log(url);
+        let listOfDeliveries: IDelivery[] = [];
+        axios.get(url)
+            .then((res) => {
+                console.log("got the list of deliveries!");
+                console.log(res.data);
+                listOfDeliveries = res.data;
+            })
+            .catch((err) => {
+                console.log("FAILED!");
+                console.log(err.toString());
+                listOfDeliveries = [];
+            });
+        return listOfDeliveries;
+    };
 
     takeDelivery = (id: number, address: string) => {
-        axios.put(`192.168.51.66:8080/deliveries/${id}/assign?privateKey=${appSettings.getString(Constant.WALLET_KEY)}`)
+        axios.put(`https://backstreet-hodlers.herokuapp.com/deliveries/${id}/assign?privateKey=${appSettings.getString(Constant.WALLET_KEY)}`)
             .then((res) => {
                 // TODO GET list of deliveries
                 // this.deliveries = this.getDeliveries();
