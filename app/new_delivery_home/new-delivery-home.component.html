@@ -1,1 +1,20 @@
-<Button class="btn-new-delivery" text="New delivery" (tap)="onNewDeliveryButtonTap()"></Button>
+<FlexboxLayout flexDirection="column" class="list-group-item page-layout">
+    <Label order="1" class="lbl-your-deliveries" text="Open deliveries"></Label>
+    <FlexboxLayout order= "2" flexDirection="row" class="list-group-item open-deliveries-table-header">
+        <Label text="Tokens" class="list-delivery-tokens" style="flex:1;"></Label>
+        <Label text="From" class="list-delivery-from" style="flex:2;"></Label>
+        <Label text="To" class="list-delivery-to" style="flex:3;"></Label>
+        <Label text="Status" class="list-delivery-status" style="align-content: flex-end;margin-right: 10em"></Label>
+    </FlexboxLayout>
+    <ListView order="3" class="list-group" [items]="dummyDeliveries" style="height:1000px">
+        <ng-template let-delivery="item">
+            <FlexboxLayout flexDirection="row" class="list-group-item table">
+                    <Label [text]="delivery.tokens" class="list-delivery-tokens"></Label>
+                    <Label [text]="delivery.from" class="list-delivery-from"></Label>
+                    <Label [text]="delivery.to" class="list-delivery-to"></Label>
+                    <Label [text]="delivery.status" class="list-delivery-status"></Label>
+            </FlexboxLayout>
+        </ng-template>
+    </ListView>
+    <Button order="4" class="btn-new-delivery" text="New delivery" (tap)="onNewDeliveryButtonTap()"></Button>
+</FlexboxLayout>
