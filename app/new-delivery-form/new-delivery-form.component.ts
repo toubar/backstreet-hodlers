@@ -14,39 +14,25 @@ import {TextField} from "tns-core-modules/ui/text-field";
 })
 
 export class NewDeliveryFormComponent  {
+
     private from: string;
     private to: string;
     private description: string;
     private tokens: number;
 
-    private newDelivery: IDelivery;
-
     onButtonTap = () => {
-        console.log(this.from);
-
-        this.newDelivery.from = this.from;
-        this.newDelivery.to = this.to;
-        this.newDelivery.description = this.description;
-        this.newDelivery.tokens = this.tokens;
-
-        const delivery: IDelivery = {
-            from: this.from,
-            to: this.to,
-            description: this.description,
-            tokens: this.tokens
-        };
-        this.postNewDelivery(delivery);
+        this.postNewDelivery();
     };
 
-    postNewDelivery = (deliveryData: IDelivery) => {
-        const newDelivery = {
+    postNewDelivery = () => {
+        const newDeliveryJson = {
             privateKey: appSettings.getString(Constant.WALLET_KEY),
-            from: deliveryData.from,
-            to: deliveryData.to,
-            description: deliveryData.description,
-            tokens: deliveryData.tokens,
+            tokens: this.tokens,
+            description: this.description,
+            from: this.from,
+            to: this.to,
         };
-        axios.post(`https://backstreet-hodlers.herokuapp.com/`, newDelivery)
+        axios.post(`https://backstreet-hodlers.herokuapp.com/deliveries`, newDeliveryJson)
             .then((res) => {
                 console.log(res.status);
                 console.log("success!");

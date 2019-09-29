@@ -27,14 +27,6 @@ export class NewDeliveryHomeComponent implements AfterViewInit {
         console.log("LOG: NewDeliveryHomeComponent just re-rendered");
         // TODO enable GET list of deliveries HTTP call and disable dummy data
         this.deliveries = this.getDeliveries();
-        // getString(`http://192.168.51.66:8080/`).then((r: string) => {
-        //     console.log(r);
-        //     console.log("new get from NativeScript");
-        // });
-        // axios.get(`http://192.168.51.66:8080/`)
-        //     .then((r) => {
-        //         console.log(r);
-        //     });
     };
 
     getDeliveries = (): IDelivery[] => {
